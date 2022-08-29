@@ -11,6 +11,7 @@ const cars = (state = [], action) => {
     case "REMOVE_CAR":
       const copy = [...state];
       copy.splice(action.value, 1);
+      return copy;
     default:
       return state;
   }

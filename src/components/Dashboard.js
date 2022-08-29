@@ -33,7 +33,7 @@ const Dashboard = (props) => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                {props.cars.map((car, idx) => (
+                {props.cars.map((car, index) => (
                     <TableRow key={car.id}>
                         <TableCell component="th" scope="row">
                             {car.id}

@@ -32,7 +32,7 @@ class AddCar extends Component {
         console.log("THE CAR", payload)
         // add this.props.addCar function here
         this.props.addCar(payload)
-        this.toggleDialog()
+        this.setState({ open: false });
         // also add this.setState to close the dialog
     }
 

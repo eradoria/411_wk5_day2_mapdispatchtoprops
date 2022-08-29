@@ -1,20 +1,20 @@
-import { connect } from 'react-redux'
-import Dashboard from '../components/Dashboard'
+import { connect } from "react-redux";
+import Dashboard from "../components/Dashboard";
 // import { removeCar } action here
-import { removeCar } from '../redux/action'
+import { removeCar } from "../redux/action";
 
 const mapStateToProps = (state) => {
-    return {
-        user: state.user,
-        cars: state.cars
-    }
-}
+  return {
+    user: state.user,
+    cars: state.cars,
+  };
+};
 
 // add mapDispatchToProps function here
-const mapDispatchToProps = () => {
-    return{
-        removeCar: (index) => dispatch.removeCar(index)
-    }
-}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    removeCar: (index) => dispatch(removeCar(index)),
+  };
+};
 
-export default connect(mapStateToProps)(Dashboard)
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

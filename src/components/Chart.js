@@ -1,8 +1,10 @@
 import React from "react";
-import { PieChart } from "react-minimal-pie-chart";
+import PieChart from "react-minimal-pie-chart";
 
 const Chart = (props) => {
   // create variable "over" with all the cars whose horsepower is >= 200
+  let overhp = props.cars.filter((hp) => hp.horsepower >= 200);
+  let underhp = props.cars.filter((hp) => hp.horsepower < 200);
   // create variable "under" with all the cars whose horsepower is < 200
 
   return (
@@ -11,10 +13,10 @@ const Chart = (props) => {
         style={{ width: "200px" }}
         // replace the "value" values with our "over" and "under" variables.
         data={[
-          { title: "Over", value: 16, color: "#C13C37" },
-          { title: "Under", value: 4, color: "#E38627" },
+          { title: "Over", value: overhp.length, color: "#C13C37" },
+          { title: "Under", value: underhp.length, color: "#E38627" },
         ]}
-        label={({ dataEntry }) => dataEntry.value}
+        label
         labelStyle={{
           fill: "white",
           fontSize: "small",
